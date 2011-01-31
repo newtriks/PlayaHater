@@ -13,9 +13,9 @@ package com.newtriks.components
     import flash.events.MouseEvent;
     import flash.geom.Point;
 
-    public class HaterProgress extends ProgressBar
+    public class HateProgress extends ProgressBar
     {
-        public function HaterProgress(parent:DisplayObjectContainer=null, xpos:Number=0, ypos:Number=0)
+        public function HateProgress(parent:DisplayObjectContainer=null, xpos:Number=0, ypos:Number=0)
         {
             super(parent, xpos, ypos);
         }

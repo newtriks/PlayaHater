@@ -18,7 +18,7 @@ package com.newtriks.components
     {
         private var _play_pb:PushButton;
         private var _mute_pb:PushButton;
-        private var _progress_bar:HaterProgress;
+        private var _progress_bar:HateProgress;
         private var _scrubCallBack:Function;
         private var _playCallBack:Function;
         private var _muteCallBack:Function;
@@ -38,7 +38,7 @@ package com.newtriks.components
         {
             _play_pb=new PushButton(this, 0, 0, 'play', playClickHandler);
             _mute_pb=new PushButton(this, 0, 0, 'mute', muteClickHandler);
-            _progress_bar=new HaterProgress(this, 0, 0);
+            _progress_bar=new HateProgress(this, 0, 0);
             _progress_bar.maximum=100;
             _progress_bar.addEventListener(MouseEvent.MOUSE_UP, progressClickHandler);
         }
