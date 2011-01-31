@@ -1,1 +1,9 @@
-Example usages to come
+More PlayaHater code examples to come but for now:
+
+STREAMING:
+
+new PlayaHater(this, 0, 0, [mymovie.flv], 'rtmp://example-streaming.com/app/', logHandlerMethod, true, ObjectEncoding.AMF0);
+
+PROGRESSIVE:
+
+new PlayaHater(this, 0, 0, ['http://example-nonstreaming.com/mymovie.flv'], '', logHandlerMethod, true, ObjectEncoding.AMF0);
