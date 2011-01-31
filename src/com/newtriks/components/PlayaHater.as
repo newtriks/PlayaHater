@@ -21,7 +21,7 @@ package com.newtriks.components
     import flash.net.NetConnection;
     import flash.net.NetStream;
 
-    public class PlayerHater extends Component
+    public class PlayaHater extends Component
     {
         // APP CONSTANTS
         public static const BAR_HEIGHT:int=20;
@@ -69,7 +69,7 @@ package com.newtriks.components
         private var _smoothing:Boolean=true;
         private var _dispatchStatusEvents:Boolean=false;
 
-        public function PlayerHater(parent:DisplayObjectContainer=null, xpos:Number=0, ypos:Number=0,
+        public function PlayaHater(parent:DisplayObjectContainer=null, xpos:Number=0, ypos:Number=0,
                                     mediaFile:Array=null, url:String='', logCallbackHandler:Function=null,
                                     autoplay:Boolean=true, defaultObjectEncoding:uint=0)
         {
@@ -89,7 +89,7 @@ package com.newtriks.components
         override protected function init():void
         {
             super.init();
-            _logCallbackHandler("PlayerHater :: init");
+            _logCallbackHandler("PlayaHater :: init");
             buildNetConnection();
             _soundTransform=new SoundTransform();
             // Callbacks for the controls
@@ -102,7 +102,7 @@ package com.newtriks.components
         override protected function addChildren():void
         {
             super.addChildren();
-            _logCallbackHandler("PlayerHater :: add children");
+            _logCallbackHandler("PlayaHater :: add children");
             // Feedback label
             _feedback=new Label(this, 0, 0);
             _feedback.autoSize=true;
@@ -118,7 +118,7 @@ package com.newtriks.components
         override public function draw():void
         {
             super.draw();
-            _logCallbackHandler("PlayerHater :: draw");
+            _logCallbackHandler("PlayaHater :: draw");
             var _viewPort:Rectangle=getVideoRect(_video.videoWidth, _video.videoHeight);
             // Feedback label positioning
             _feedback.move(_viewPort.x+((_viewPort.width-_feedback.width)/2),
@@ -217,7 +217,7 @@ package com.newtriks.components
 
         public function cleanUp():void
         {
-            _logCallbackHandler("PlayerHater :: performing cleanup");
+            _logCallbackHandler("PlayaHater :: performing cleanup");
             stage.removeEventListener(Event.ENTER_FRAME, handleCurrentStreamTime);
             _video.attachNetStream(null);
             _stream.close();
