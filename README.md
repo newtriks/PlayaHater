@@ -1,7 +1,7 @@
 PlayaHater code examples
 ========================
 
-Simply provide the following parameters:
+Simply provide the following parameters
 ----------------------------------------
 
 * Parent container that the player will be loaded into e.g. <em>this</em>
@@ -22,5 +22,16 @@ PROGRESSIVE:
 ------------
 
 `new PlayaHater(this, 0, 0, ['http://media.newtriks.com/flvs/lif.flv'], '', logHandlerMethod, true, ObjectEncoding.AMF0);`
+
+Full running examples with source code
+--------------------------------------
+
+[Progressive][1]
+[Progressive with logger][2]
+[Progressive using FlashVars][3]
+
+[1]: https://github.com/newtriks/PlayaHater/tree/master/src/examples/progressive
+[2]: https://github.com/newtriks/PlayaHater/tree/master/src/examples/progressive_logger
+[3]: https://github.com/newtriks/PlayaHater/tree/master/src/examples/progressive_flashvars
 
 
