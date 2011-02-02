@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <title>Playa Hater | Progressive Example</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+    <script type="text/javascript" src="../assets/js/swfobject.js"></script>
+    <script type="text/javascript">
+        var swfVersionStr = "10.0.0";
+        var xiSwfUrlStr = "../assets/swf/expressInstall.swf";
+        var flashvars = {
+        	foo:"ello"
+        };
+        var params = {
+            bgcolor: "#FFFFFF",
+            allowfullscreen:"true",
+			allownetworking: "all",
+			allowscriptaccess: "always",
+			base: ".",
+			devicefont: "false",
+			menu: "false",
+			play: "true",
+			quality:"high",
+			salign:"tl",
+			scale:"showall",
+			seamlesstabbing:"false",
+			swliveconnect:"true",
+			wmode:"window"
+        };
+        var attributes = {
+            id: "PlayaHater",
+            name: "PlayaHater"
+        };
+		swfobject.embedSWF("progressive.swf", "flashContent", "480", "390", swfVersionStr, xiSwfUrlStr, flashvars, params, attributes);
+		function Focal(){
+        	document.Main.focus();
+        }
+    </script>
+    <style media="screen" type="text/css">
+    	body {
+			background-color:#1D8AC4;	
+			font-family:"Helvetica,Arial,FreeSans";
+			text-align:center;
+		}
+
+		#wrapper {
+			background-color:#1D8AC4;
+			width:480px;
+			margin:50px auto;
+			padding:20px 20px 20px 20px;
+			min-height:390px;
+			border:2px solid #fff;
+			outline:1px solid #0D0E29;
+			text-align:left;
+		}
+		
+		h1, h2 {
+			letter-spacing:-1px;
+			color:#0D0E29;
+			font-weight:normal;		
+			margin-bottom:-10px;
+		}
+
+		h1 {
+			font-size:22px;
+		}
+
+		h2 {
+			font-size:18px;
+		}
+
+		.less {
+			color:#0D0E29;
+			font-size:12px;
+		}
+
+		a {
+			color:#0D0E29;		
+		}
+    </style>
+</head>
+<body onLoad="Focal()">
+	<h3>PlayaHater :: Progressive Example</h3>
+	<div id="wrapper">
+		<div id="flashContent">
+		    <a href="http://www.adobe.com/go/getflashplayer">
+		        <img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif"
+		             alt="Get Adobe Flash player"/>
+		    </a>
+		</div>	
+	</div>	
+</body>
+</html>

@@ -89,7 +89,7 @@ package com.newtriks.components
         override protected function init():void
         {
             super.init();
-            _logCallbackHandler("PlayaHater :: init");
+            log("PlayaHater :: init");
             buildNetConnection();
             _soundTransform=new SoundTransform();
             // Callbacks for the controls
@@ -102,7 +102,7 @@ package com.newtriks.components
         override protected function addChildren():void
         {
             super.addChildren();
-            _logCallbackHandler("PlayaHater :: add children");
+            log("PlayaHater :: add children");
             // Feedback label
             _feedback=new Label(this, 0, 0);
             _feedback.autoSize=true;
@@ -118,13 +118,13 @@ package com.newtriks.components
         override public function draw():void
         {
             super.draw();
-            _logCallbackHandler("PlayaHater :: draw");
+            log("PlayaHater :: draw");
             var _viewPort:Rectangle=getVideoRect(_video.videoWidth, _video.videoHeight);
             // Feedback label positioning
             _feedback.move(_viewPort.x+((_viewPort.width-_feedback.width)/2),
                     _viewPort.y+((_viewPort.height-_feedback.height)/2));
             // Set video size
-            if(_video.videoWidth) layoutHater();
+            if(_video.width>0) layoutHater();
         }
 
         /**
@@ -217,7 +217,7 @@ package com.newtriks.components
 
         public function cleanUp():void
         {
-            _logCallbackHandler("PlayaHater :: performing cleanup");
+            log("PlayaHater :: performing cleanup");
             stage.removeEventListener(Event.ENTER_FRAME, handleCurrentStreamTime);
             _video.attachNetStream(null);
             _stream.close();
@@ -263,7 +263,7 @@ package com.newtriks.components
             _connection.client=_client;
             _connection.connect(_url);
 
-            _logCallbackHandler("Making net connection to: "+_url);
+            log("Making net connection to: "+_url);
         }
 
         protected function connectStream():void
@@ -319,7 +319,7 @@ package com.newtriks.components
             {
                 _stream.play(_mediaFile.join(","), 0);
                 _controls.playing=_playing=!_playing;
-                _logCallbackHandler("Play stream: ".concat(_mediaFile.join(",")));
+                log("Play stream: ".concat(_mediaFile.join(",")));
             }
             catch (error:Error)
             {
@@ -337,6 +337,12 @@ package com.newtriks.components
             return Math.round((value/100)*_duration);
         }
 
+		protected function log(msg:String):void
+		{
+			if(_logCallbackHandler==null) return;
+		    _logCallbackHandler(msg);
+		}
+
         /**
          * EVENT HANDLERS
          */
@@ -348,7 +354,7 @@ package com.newtriks.components
             {
                 case CONNECTED:
                 {
-                    _logCallbackHandler("NetConnection :: success");
+                    log("NetConnection :: success");
                     connectStream();
                 }
                     break;
@@ -367,7 +373,7 @@ package com.newtriks.components
                     // Swallow
                 }
                     break;
-                default: _logCallbackHandler(_status); break;
+                default: log(_status); break;
             }
             // Dispatch so VideoPlayer instances can still add events + listen
             if(dispatchStatusEvents)
@@ -436,7 +442,7 @@ package com.newtriks.components
             }
             catch(error:Error)
             {
-                _logCallbackHandler("Error handling mute: ".concat(error.message));
+                log("Error handling mute: ".concat(error.message));
             }
         }
 
@@ -449,7 +455,7 @@ package com.newtriks.components
 
         protected function handleEnd():void
         {
-            _logCallbackHandler("End");
+            log("End");
             stage.removeEventListener(Event.ENTER_FRAME, handleCurrentStreamTime);
             _stream.seek(0);
             handlePlay();
@@ -458,22 +464,21 @@ package com.newtriks.components
         // FMS CALLBACK HANDLERS
         public function close():void
         {
-            _logCallbackHandler("Net Connection :: close");
+            log("Net Connection :: close");
         }
 
         protected function metaDataHandler(metaData:Object):void
         {
             _metaData=metaData;
-            _duration=Number(parseFloat(metaData['duration'].toFixed(2)));
-            layoutHater();
-            stage.addEventListener(Event.ENTER_FRAME, handleCurrentStreamTime);
-			// Update layout
-			stage.dispatchEvent(new Event(Event.RESIZE, true));
-            // Log metadata
-            for(var propName:String in metaData)
-            {
-                _logCallbackHandler("Meta data: ".concat(propName, " = ", metaData[propName]));
-            }
+			_duration=Number(parseFloat(metaData['duration'].toFixed(2)));
+			stage.dispatchEvent(new Event(Event.RESIZE,true));
+			layoutHater();
+			stage.addEventListener(Event.ENTER_FRAME, handleCurrentStreamTime);
+			// Log metadata
+			for(var propName:String in metaData)
+			{
+				log("Meta data: ".concat(propName, " = ", metaData[propName]));
+			}
         }
 
         protected function cuePointHandler(cuePoint:Object):void
