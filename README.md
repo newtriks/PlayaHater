@@ -21,7 +21,7 @@ STREAMING:
 PROGRESSIVE:
 ------------
 
-`new PlayaHater(this, 0, 0, ['http://media.newtriks.com/flvs/lif.flv'], '', logHandlerMethod, true, ObjectEncoding.AMF0);`
+`new PlayaHater(this, 0, 0, ['http://media.newtriks.com/flvs/lif.flv']);`
 
 Full running examples with source code
 --------------------------------------
