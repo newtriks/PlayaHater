@@ -467,6 +467,8 @@ package com.newtriks.components
             _duration=Number(parseFloat(metaData['duration'].toFixed(2)));
             layoutHater();
             stage.addEventListener(Event.ENTER_FRAME, handleCurrentStreamTime);
+			// Update layout
+			stage.dispatchEvent(new Event(Event.RESIZE, true));
             // Log metadata
             for(var propName:String in metaData)
             {
