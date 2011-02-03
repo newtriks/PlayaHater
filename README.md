@@ -38,6 +38,6 @@ Full running examples with source code
 [3]: https://github.com/newtriks/PlayaHater/tree/master/src/examples/progressive_flashvars
 [l1]: http://apps.newtriks.com/PlayaHater/examples/progressive/
 [l2]: http://apps.newtriks.com/PlayaHater/examples/progressive_logger/
-[l3]: http://apps.newtriks.com/PlayaHater/examples/progressive_flashvars/
+[l3]: http://apps.newtriks.com/PlayaHater/examples/progressive_flashvars/?media=http://media.newtriks.com/flvs/lif.flv
 
 
