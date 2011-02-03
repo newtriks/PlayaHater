@@ -26,12 +26,15 @@ PROGRESSIVE:
 Full running examples with source code
 --------------------------------------
 
-1) [Progressive][1]
-2) [Progressive with logger][2]
-3) [Progressive using FlashVars][3]
+1) [Progressive][1] [see in action] [l1]
+2) [Progressive with logger][2] [see in action] [l2]
+3) [Progressive using FlashVars][3] [see in action] [l3]
 
 [1]: https://github.com/newtriks/PlayaHater/tree/master/src/examples/progressive
 [2]: https://github.com/newtriks/PlayaHater/tree/master/src/examples/progressive_logger
 [3]: https://github.com/newtriks/PlayaHater/tree/master/src/examples/progressive_flashvars
+[l1]: http://apps.newtriks.com/PlayaHater/examples/progressive/
+[l2]: http://apps.newtriks.com/PlayaHater/examples/progressive_logger/
+[l3]: http://apps.newtriks.com/PlayaHater/examples/progressive_flashvars/
 
 
